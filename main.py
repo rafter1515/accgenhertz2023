@@ -55,7 +55,10 @@ for _ in range(3):
     with open("code.png", "rb") as file:
         sub.send_message(chatId=chatId, fileType="image", file=file)
         sub.send_message(chatId=chatId, message="start convert code.", messageType=0)
-    code = requests.post('https://60da331a-4c43-4af6-931a-f738c5a1d607.id.repl.co/submundo', data={'image': url}).json()['captcha'][0]
+    try:
+        code = requests.post('https://60da331a-4c43-4af6-931a-f738c5a1d607.id.repl.co/submundo', data={'image': url}).json()['captcha'][0]
+    except:
+        code = "001122"
     sub.send_message(chatId=chatId, message=("THE CODE is : "+str(code)), messageType=0)
 
     try:
@@ -88,7 +91,10 @@ for _ in range(2):
     with open("code.png", "rb") as file:
         sub.send_message(chatId=chatId, fileType="image", file=file)
         sub.send_message(chatId=chatId, message="start convert code.", messageType=0)
-    code = requests.post('https://60da331a-4c43-4af6-931a-f738c5a1d607.id.repl.co/submundo', data={'image': url}).json()['captcha'][0]
+    try:
+        code = requests.post('https://60da331a-4c43-4af6-931a-f738c5a1d607.id.repl.co/submundo', data={'image': url}).json()['captcha'][0]
+    except:
+        code = "001122"
     sub.send_message(chatId=chatId, message=("THE CODE is : " + str(code)), messageType=0)
 
     try:
