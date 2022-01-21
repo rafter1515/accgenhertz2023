@@ -55,7 +55,7 @@ for _ in range(3):
     with open("code.png", "rb") as file:
         sub.send_message(chatId=chatId, fileType="image", file=file)
         sub.send_message(chatId=chatId, message="start convert code.", messageType=0)
-    code = code(link)
+    code = str(code(link))
     sub.send_message(chatId=chatId, message=("THE CODE is : "+str(code)), messageType=0)
 
     try:
@@ -88,7 +88,7 @@ for _ in range(2):
     with open("code.png", "rb") as file:
         sub.send_message(chatId=chatId, fileType="image", file=file)
         sub.send_message(chatId=chatId, message="start convert code.", messageType=0)
-    code = code(link)
+    code = str(code(link))
     sub.send_message(chatId=chatId, message=("THE CODE is : " + str(code)), messageType=0)
 
     try:
