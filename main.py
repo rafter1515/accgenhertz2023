@@ -51,10 +51,6 @@ for _ in range(3):
     print(email)
     client.request_verify_code(email=email, dev=dev)
     url = client.get_message(email)
-    wget.download(url=url, out="code.png")
-    with open("code.png", "rb") as file:
-        sub.send_message(chatId=chatId, fileType="image", file=file)
-        sub.send_message(chatId=chatId, message="start convert code.", messageType=0)
     try:
         code = requests.post('https://60da331a-4c43-4af6-931a-f738c5a1d607.id.repl.co/submundo', data={'image': url}).json()['captcha'][0]
     except:
@@ -87,10 +83,6 @@ for _ in range(2):
     print(email)
     client.request_verify_code(email=email, dev=dev)
     url = client.get_message(email)
-    wget.download(url=url, out="code.png")
-    with open("code.png", "rb") as file:
-        sub.send_message(chatId=chatId, fileType="image", file=file)
-        sub.send_message(chatId=chatId, message="start convert code.", messageType=0)
     try:
         code = requests.post('https://60da331a-4c43-4af6-931a-f738c5a1d607.id.repl.co/submundo', data={'image': url}).json()['captcha'][0]
     except:
