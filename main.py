@@ -55,6 +55,13 @@ def get_message(email):
         pass
     return url
 
+def captcha_solver(captcha: str):
+    return requests.post(
+            "https://captchasolver.neodouglas.repl.co/predict",
+            data={"image": captcha}
+        ).json()['captcha'][0]
+
+
 client = amino.Client(deviceid)
 client.login(emaill, passwordd)
 bb = client.get_from_code(chatlink)
@@ -79,13 +86,14 @@ for _ in range(3):
     client.request_verify_code(email=email)
     url = get_message(email)
     try:
-        code = requests.get(f"https://cynical-is-gay.herokuapp.com/captcha/solver/V1={url}").json()["captcha"]
+        code = captcha_solver(url)
+        print(code)
     except:
-        code = "001122"
+        print("cant get code")
     sub.send_message(chatId=chatId, message=("THE CODE is : "+str(code)), messageType=0)
 
     try:
-        client.register(email=email, password=password, nickname=nickname, verificationCode=code, deviceId=devicee)
+        client.register(email=email, password=password, nickname=nickname, verificationCode=str(code), deviceId=devicee)
         d = {}
         d["email"] = str(email)
         d["password"] = str(password)
@@ -111,13 +119,14 @@ for _ in range(2):
     client.request_verify_code(email=email)
     url = get_message(email)
     try:
-        code = requests.get(f"https://cynical-is-gay.herokuapp.com/captcha/solver/V1={url}").json()["captcha"]
+        code = captcha_solver(url)
+        print(code)
     except:
-        code = "001122"
+        print("cant get code")
     sub.send_message(chatId=chatId, message=("THE CODE is : " + str(code)), messageType=0)
 
     try:
-        client.register(email=email, password=password, nickname=nickname, verificationCode=code, deviceId=devicee)
+        client.register(email=email, password=password, nickname=nickname, verificationCode=str(code), deviceId=devicee)
         d = {}
         d["email"] = str(email)
         d["password"] = str(password)
