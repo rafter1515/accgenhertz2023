@@ -6,7 +6,6 @@ from hmac import new
 import os
 import secmail
 import aminofix as amino
-from client import Client
 import json
 import threading
 import wget
@@ -56,7 +55,7 @@ def get_message(email):
         pass
     return url
 
-client = Client(deviceid)
+client = amino.Client(deviceid)
 client.login(emaill, passwordd)
 bb = client.get_from_code(chatlink)
 chatId = bb.objectId
@@ -77,7 +76,7 @@ for _ in range(3):
     devicee = client.device_id
     email = gen_email()
     print(email)
-    client.request_verify_code(email=email, dev=devicee)
+    client.request_verify_code(email=email)
     url = get_message(email)
     try:
         code = requests.get(f"https://cynical-is-gay.herokuapp.com/captcha/solver/V1={url}").json()["captcha"]
@@ -93,14 +92,14 @@ for _ in range(3):
         d["device"] = str(devicee)
         # t=json.dumps(d)
         print(d)
-        requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
+        requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(devicee)}")
     except Exception as l:
         print(l)
         pass
 
     # de=client.devicee()
 device = generate_device_Id()
-client = Client(deviceid)
+client = amino.Client(device)
 for _ in range(2):
     try:
         os.remove("code.png")
@@ -109,7 +108,7 @@ for _ in range(2):
     devicee = client.device_id
     email = gen_email()
     print(email)
-    client.request_verify_code(email=email, dev=devicee)
+    client.request_verify_code(email=email)
     url = get_message(email)
     try:
         code = requests.get(f"https://cynical-is-gay.herokuapp.com/captcha/solver/V1={url}").json()["captcha"]
@@ -125,7 +124,7 @@ for _ in range(2):
         d["device"] = str(devicee)
         # t=json.dumps(d)
         print(d)
-        requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(dev)}")
+        requests.get(url=f"{replit}/api/save?email={str(email)}&password={str(password)}&device={str(devicee)}")
     except Exception as k:
         print(k)
         pass
