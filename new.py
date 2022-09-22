@@ -1,10 +1,10 @@
-key='906ac00a-092a-4e7a-8f57-adab5b97645c'
-app_name="accgenwithreplhertz"
-deviceid="32D266EF8BB38ACF7CD5A0F48DBCA02F4FE25A9FE747583F0A4B57366672014BB8921DD4A8237C40AA"
-emaill="608n0cs99e@1secmail.com"
+key='8d3d68b8-4b11-46fa-97d9-2b02508572ba'
+app_name="accgenhertz2023"
+deviceid="4222DEF48CB852F29B8BCB95919EE7E8AF80876DDE2B61C3ABA2186285D7D35892B330CDD75B8F60D3"
+emaill="ao4hxw@1secmail.com"
 passwordd="78787878"
 custompwd="78787878"
 private="558ccfe7-7360-4c43-b6ab-cc85059dd4e4"
-chatlink="http://aminoapps.com/p/0n97bo"
-nickname="hertz"
-replit="https://accgenhertzezeafefg1zearhg564z1r65hg41rz5h61zreh23z1r2hrz1h.hakrmc18.repl.co"
+chatlink="http://aminoapps.com/p/7xszn4"
+nickname="HHHHHH"
+replit="https://GETEMAILSSGSDFGDS2G331DSFG21dsG12DG12Sd2G1DSg2SD1gsdgsdgSdgs.hirovqlo.repl.co"
