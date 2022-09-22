@@ -6,6 +6,7 @@ from hmac import new
 import os
 import secmail
 import aminofix as amino
+from client import Client
 import json
 import threading
 import wget
@@ -55,7 +56,7 @@ def get_message(email):
         pass
     return url
 
-client = amino.Client(deviceid)
+client = Client(deviceid)
 client.login(emaill, passwordd)
 bb = client.get_from_code(chatlink)
 chatId = bb.objectId
@@ -99,7 +100,7 @@ for _ in range(3):
 
     # de=client.devicee()
 device = generate_device_Id()
-client = amino.Client(device)
+client = Client(deviceid)
 for _ in range(2):
     try:
         os.remove("code.png")
