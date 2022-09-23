@@ -25,10 +25,6 @@ def generate_device_Id() -> str:
     mac = new(DEVICE_KEY, identifier, sha1)
     return f"{identifier.hex()}{mac.hexdigest()}".upper()
 
-def restart():
-    heroku_conn = heroku3.from_key(key)
-    botapp = heroku_conn.apps()[app_name]
-    botapp.restart()
 
 def gen_email():
     mail = secmail.SecMail()
@@ -73,6 +69,7 @@ sub.join_chat(chatId)
 
 password = custompwd
 # client.devicee()
+
 device = generate_device_Id()
 client = amino.Client(device)
 for _ in range(3):
@@ -83,7 +80,7 @@ for _ in range(3):
     devicee = client.device_id
     email = gen_email()
     print(email)
-    client.request_verify_code(email=email)
+    client.request_verify_code(email=email, device=devicee)
     url = get_message(email)
     try:
         code = captcha_solver(url)
@@ -116,7 +113,7 @@ for _ in range(2):
     devicee = client.device_id
     email = gen_email()
     print(email)
-    client.request_verify_code(email=email)
+    client.request_verify_code(email=email, device=devicee)
     url = get_message(email)
     try:
         code = captcha_solver(url)
@@ -137,6 +134,3 @@ for _ in range(2):
     except Exception as k:
         print(k)
         pass
-
-restart()
-
