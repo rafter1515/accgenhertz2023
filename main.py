@@ -80,7 +80,7 @@ for _ in range(3):
     devicee = client.device_id
     email = gen_email()
     print(email)
-    client.request_verify_code(email=email, device=devicee)
+    client.request_verify_code(email=email)
     url = get_message(email)
     try:
         code = captcha_solver(url)
@@ -113,7 +113,7 @@ for _ in range(2):
     devicee = client.device_id
     email = gen_email()
     print(email)
-    client.request_verify_code(email=email, device=devicee)
+    client.request_verify_code(email=email)
     url = get_message(email)
     try:
         code = captcha_solver(url)
@@ -134,3 +134,7 @@ for _ in range(2):
     except Exception as k:
         print(k)
         pass
+
+
+
+
